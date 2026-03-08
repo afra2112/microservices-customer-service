@@ -3,9 +3,11 @@ package org.microservice.customerservice;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.UUID;
+
 public record CustomerRequest(
         @NotBlank
-        String customerId,
+        UUID customerId,
 
         @NotBlank(message = "Customer firstname is required")
         String firstname,
