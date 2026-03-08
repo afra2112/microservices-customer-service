@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
                 .body(buildApiError(
                         ex.getMessage(),
                         request.getRequestURI(),
-                        HttpStatus.NO_CONTENT.value(),
+                        HttpStatus.NOT_FOUND.value(),
                         errors
                 ));
     }
