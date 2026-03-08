@@ -1,6 +1,11 @@
-package org.microservice.customerservice;
+package org.microservice.customerservice.service;
 
 import lombok.RequiredArgsConstructor;
+import org.microservice.customerservice.persistence.CustomerRepository;
+import org.microservice.customerservice.controller.dto.CustomerRequest;
+import org.microservice.customerservice.controller.dto.CustomerResponse;
+import org.microservice.customerservice.controller.mapper.CustomerMapper;
+import org.microservice.customerservice.entity.Customer;
 import org.microservice.customerservice.exception.CustomerNotFoundException;
 import org.springframework.stereotype.Service;
 

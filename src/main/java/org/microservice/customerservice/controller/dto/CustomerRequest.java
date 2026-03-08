@@ -1,7 +1,8 @@
-package org.microservice.customerservice;
+package org.microservice.customerservice.controller.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.microservice.customerservice.entity.Address;
 
 import java.util.UUID;
 
