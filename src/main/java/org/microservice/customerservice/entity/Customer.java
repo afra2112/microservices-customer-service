@@ -1,4 +1,4 @@
-package org.microservice.customerservice;
+package org.microservice.customerservice.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

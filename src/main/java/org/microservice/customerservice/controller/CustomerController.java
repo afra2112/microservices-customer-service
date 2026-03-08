@@ -1,7 +1,10 @@
-package org.microservice.customerservice;
+package org.microservice.customerservice.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.microservice.customerservice.controller.dto.CustomerRequest;
+import org.microservice.customerservice.controller.dto.CustomerResponse;
+import org.microservice.customerservice.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
