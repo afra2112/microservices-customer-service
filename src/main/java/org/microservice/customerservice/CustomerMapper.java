@@ -6,4 +6,5 @@ import org.mapstruct.Mapper;
 public interface CustomerMapper {
 
     Customer requestToEntity(CustomerRequest request);
+    CustomerResponse entityToResponse(Customer customer);
 }
