@@ -4,7 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -23,5 +23,20 @@ public class CustomerController {
     public ResponseEntity<Void> updateCustomer(@RequestBody @Valid CustomerRequest request){
         customerService.updateCustomer(request);
         return ResponseEntity.accepted().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CustomerResponse>> findAll(){
+        return ResponseEntity.ok(customerService.findAllCustomers());
+    }
+
+    @GetMapping("/exists/{customerId}")
+    public ResponseEntity<Boolean> existsById(@PathVariable UUID customerId){
+        return ResponseEntity.ok(customerService.existsById(customerId));
+    }
+
+    @GetMapping("/{customerId}")
+    public ResponseEntity<CustomerResponse> getById(@PathVariable UUID customerId){
+        return ResponseEntity.ok(customerService.findById(customerId));
     }
 }
