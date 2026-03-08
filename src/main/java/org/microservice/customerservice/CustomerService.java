@@ -56,4 +56,8 @@ public class CustomerService {
                         String.format("Cannot not found with the provided ID:: %s", customerId)
                 ));
     }
+
+    public void deleteCustomer(UUID customerId) {
+        customerRepository.deleteById(customerId);
+    }
 }
