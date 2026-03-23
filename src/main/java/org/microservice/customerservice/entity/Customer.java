@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Customer {
 
     @Id
-    private UUID customerId;
+    private String customerId;
     private String firstname;
     private String lastname;
     private String email;

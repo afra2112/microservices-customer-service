@@ -20,12 +20,12 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
     private final CustomerMapper customerMapper;
 
-    UUID createCustomer(CustomerRequest request){
+    public String createCustomer(CustomerRequest request){
         var customer = customerRepository.save(customerMapper.requestToEntity(request));
         return customer.getCustomerId();
     }
 
-    void updateCustomer(CustomerRequest request){
+    public void updateCustomer(CustomerRequest request){
         var customer = customerRepository.findById(request.customerId()).orElseThrow(
                 () -> new CustomerNotFoundException(
                         String.format("Cannot update customer:: No customer found with the provided ID:: %s", request.customerId())
