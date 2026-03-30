@@ -11,7 +11,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collation = "customers")
+@Document(collection = "customers")
 public class Customer {
 
     @Id
