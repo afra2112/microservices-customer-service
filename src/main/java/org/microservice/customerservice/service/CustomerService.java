@@ -50,11 +50,11 @@ public class CustomerService {
         customer.setAddress(request.address());
     }
 
-    public boolean existsById(UUID customerId) {
+    public boolean existsById(String customerId) {
         return customerRepository.existsById(customerId);
     }
 
-    public CustomerResponse findById(UUID customerId) {
+    public CustomerResponse findById(String customerId) {
         return customerRepository.findById(customerId)
                 .map(customerMapper::entityToResponse)
                 .orElseThrow(() -> new CustomerNotFoundException(
@@ -62,7 +62,7 @@ public class CustomerService {
                 ));
     }
 
-    public void deleteCustomer(UUID customerId) {
+    public void deleteCustomer(String customerId) {
         customerRepository.deleteById(customerId);
     }
 }

@@ -8,7 +8,6 @@ import org.microservice.customerservice.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -34,17 +33,17 @@ public class CustomerController {
     }
 
     @GetMapping("/exists/{customerId}")
-    public ResponseEntity<Boolean> existsById(@PathVariable UUID customerId){
+    public ResponseEntity<Boolean> existsById(@PathVariable String customerId){
         return ResponseEntity.ok(customerService.existsById(customerId));
     }
 
     @GetMapping("/{customerId}")
-    public ResponseEntity<CustomerResponse> getById(@PathVariable UUID customerId){
+    public ResponseEntity<CustomerResponse> getById(@PathVariable String customerId){
         return ResponseEntity.ok(customerService.findById(customerId));
     }
 
     @DeleteMapping("/{customerId}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable UUID customerId){
+    public ResponseEntity<Void> deleteCustomer(@PathVariable String customerId){
         customerService.deleteCustomer(customerId);
         return ResponseEntity.accepted().build();
     }

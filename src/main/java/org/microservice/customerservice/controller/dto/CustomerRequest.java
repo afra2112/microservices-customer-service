@@ -7,7 +7,7 @@ import org.microservice.customerservice.entity.Address;
 import java.util.UUID;
 
 public record CustomerRequest(
-        UUID customerId,
+        String customerId,
 
         @NotBlank(message = "Customer firstname is required")
         String firstname,
